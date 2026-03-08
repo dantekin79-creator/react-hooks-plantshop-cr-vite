@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
 function NewPlantForm({ addPlant }) {
+  // State for form inputs
   const [formData, setFormData] = useState({
     name: "",
     image: "",
     price: "",
   });
 
+  // Handler to update form data on input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -14,6 +16,7 @@ function NewPlantForm({ addPlant }) {
     });
   };
 
+  // Handler for form submission: POST to backend and add to state
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:6001/plants", {
@@ -21,15 +24,12 @@ function NewPlantForm({ addPlant }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        ...formData,
-        price: parseFloat(formData.price),
-      }),
+      body: JSON.stringify(formData), // Send form data as is
     })
       .then((r) => r.json())
       .then((newPlant) => {
-        addPlant(newPlant);
-        setFormData({ name: "", image: "", price: "" });
+        addPlant(newPlant); // Add new plant to parent state
+        setFormData({ name: "", image: "", price: "" }); // Reset form
       });
   };
 

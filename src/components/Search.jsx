@@ -9,6 +9,7 @@ function Search({ search, setSearch }) {
         id="search"
         placeholder="Type a name to search..."
         value={search}
+        // Update search state on input change
         onChange={(e) => setSearch(e.target.value)}
       />
     </div>

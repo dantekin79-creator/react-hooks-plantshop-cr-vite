@@ -1,93 +1,78 @@
-# Phase 2 Code Challenge: Plantsy
+# React Hooks Plant Shop
 
-## Demo
+A modern React application for managing a plant shop, built with Vite and styled with CSS. This app allows users to view plants, add new plants, mark plants as sold out, and search for plants by name.
 
-Use this gif as an example of how the app should work.
+## Features
 
-![Demo GIF](./demo.gif)
+- **View All Plants**: Displays a list of plants fetched from the backend on page load.
+- **Add New Plants**: Submit a form to add new plants to the shop, which persists to the backend.
+- **Mark as Sold Out**: Toggle the stock status of individual plants.
+- **Search Plants**: Filter plants by name in real-time.
+- **Responsive Design**: Beautiful, modern UI with hover effects and responsive layout.
 
-## Instructions
+## Screenshot
 
-Welcome to Plantsy! You've been tasked with building out some features for the
-admin side of a plant store. The designers have put together the components and
-CSS. Now it's up to you to bring the features to life by adding stateful logic
-as well as persisting data to the backend via our API.
+![Plant Shop Screenshot](./public/Screenshot.png)
 
-Your job will be to make our app work according to the user stories you will
-find the [Deliverables](#Deliverables) section.
+## Installation
 
-## Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dantekin79-creator/react-hooks-plantshop-cr-vite.git
+   cd react-hooks-plantshop-cr-vite
+   ```
 
-1. Run `npm install` in your terminal.
-2. Run `npm run server`. This will run your backend on port `6001`.
-3. In a new terminal, run `npm run dev`.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Make sure to open [http://localhost:6001/plants](http://localhost:6001/plants)
-in the browser to verify that your backend is working before you proceed!
+3. Start the backend server:
+   ```bash
+   npm run server
+   ```
 
-## Endpoints
+4. In a new terminal, start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The base URL for your backend is: `http://localhost:6001`
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## Deliverables
+## Usage
 
-As a user:
+- **Viewing Plants**: Plants load automatically on page load.
+- **Adding Plants**: Fill out the form with name, image URL, and price, then submit.
+- **Sold Out**: Click the button on a plant card to toggle between "In Stock" and "Out of Stock".
+- **Searching**: Type in the search bar to filter plants by name.
 
-1. When the app starts, I can see all plants.
-2. I can add a new plant to the page by submitting the form.
-3. I can mark a plant as "sold out".
-4. I can search for plants by their name and see a filtered list of plants.
+## API Endpoints
 
-### Endpoints for Core Deliverables
+- `GET /plants`: Fetch all plants.
+- `POST /plants`: Add a new plant (requires name, image, price).
 
-#### GET /plants
+Backend runs on `http://localhost:6001`.
 
-Example Response:
+## Technologies Used
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Aloe",
-    "image": "./images/aloe.jpg",
-    "price": 15.99
-  },
-  {
-    "id": 2,
-    "name": "ZZ Plant",
-    "image": "./images/zz-plant.jpg",
-    "price": 25.98
-  }
-]
-```
+- React 18
+- Vite
+- JSON Server (for backend)
+- CSS for styling
+- Vitest for testing
 
-#### POST `/plants`
+## Contributing
 
-Required Headers:
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/new-feature`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
 
-```js
-{
-  "Content-Type": "application/json"
-}
-```
+## License
 
-Request Object:
+This project is open source and available under the [MIT License](LICENSE).
 
-```json
-{
-  "name": "string",
-  "image": "string",
-  "price": number
-}
-```
+## Support
 
-Example Response:
-
-```json
-{
-  "id": 1,
-  "name": "Aloe",
-  "image": "./images/aloe.jpg",
-  "price": 15.99
-}
-```
+If you have any questions or issues, please open an issue on GitHub.
