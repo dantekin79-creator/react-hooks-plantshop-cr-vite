@@ -17,7 +17,7 @@ function PlantPage() {
   }, []);
 
   // Filter plants based on search query (case-insensitive)
-  const filteredPlants = plants.filter((plant) =>
+  const filteredPlants = (plants || []).filter((plant) =>
     plant.name.toLowerCase().includes(search.toLowerCase())
   );
 
